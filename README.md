@@ -9,6 +9,6 @@ This is in the form of a WordPress plugin.
 ## Uses
 Download the file rb-email-logger.php. That's the plugin. Activate it.
 
-This requires another utility. [Download](https://bulldogjob.com/news/) and activate that as well.
+This requires another utility. [Download](https://github.com/ckchaudhary/wp-debug-log) and activate that as well.
 
 All emails will then be logged in files `wp-contents/uploads/emails-failed-debug.log` and `wp-contents/uploads/emails-success-debug.log`.
