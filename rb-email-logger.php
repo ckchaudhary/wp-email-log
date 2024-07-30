@@ -59,7 +59,14 @@ function rbel_log_failed_email( $error ) {
 	}
 
 	$mail_data = $error->get_all_error_data();
-	$log_text  = 'TO: ' . $mail_data['to'] . PHP_EOL;
+	if ( ! empty( $mail_data ) ) {
+		$mail_data = $mail_data[0];
+	} else {
+		return false;
+	}
+
+	$to = is_array( $mail_data['to'] ) ? implode( ', ', $mail_data['to'] ) : $mail_data['to'];
+	$log_text  = 'TO: ' . $to . PHP_EOL;
 	$log_text .= 'SUBJECT: ' . $mail_data['subject'] . PHP_EOL;
 	$log_text .= '----------------------------' . PHP_EOL;
 	$log_text .= 'MESSAGE: ' . $mail_data['message'];
